@@ -22,6 +22,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { ToggleTheme } from "./toogle-theme";
+import jogai from "../../public/jogai.png";
 
 interface RouteProps {
   href: string;
@@ -35,20 +36,16 @@ interface FeatureProps {
 
 const routeList: RouteProps[] = [
   {
+    href: "#who-we-are",
+    label: "Quem somos",
+  },
+  {
     href: "#testimonials",
-    label: "Testimonials",
-  },
-  {
-    href: "#team",
-    label: "Team",
-  },
-  {
-    href: "#contact",
-    label: "Contact",
+    label: "Depoimentos",
   },
   {
     href: "#faq",
-    label: "FAQ",
+    label: "Perguntas Frequentes",
   },
 ];
 
@@ -72,10 +69,9 @@ const featureList: FeatureProps[] = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
-      <Link href="/" className="font-bold text-lg flex items-center">
-        <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-        Shadcn
+    <header className=" backdrop-blur-lg shadow-lg border border-white/5 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky z-40 rounded-2xl flex justify-between items-center px-6">
+      <Link href="/" className="font-bold text-lg flex items-center p-4">
+        <Image src={jogai} alt="Jogai logo" width={90} />
       </Link>
       {/* <!-- Mobile --> */}
       <div className="flex items-center lg:hidden">
@@ -130,7 +126,7 @@ export const Navbar = () => {
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="bg-card text-base">
-              Features
+              Cadastre sua arena
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
@@ -172,19 +168,14 @@ export const Navbar = () => {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="hidden lg:flex">
-        <ToggleTheme />
-
-        <Button asChild size="sm" variant="ghost" aria-label="View on GitHub">
-          <Link
-            aria-label="View on GitHub"
-            href="https://github.com/nobruf/shadcn-landing-page.git"
-            target="_blank"
-          >
-            <Github className="size-5" />
-          </Link>
-        </Button>
-      </div>
+      <Button asChild variant="default" className=" font-bold text-black">
+        <Link
+          href="https://github.com/nobruf/shadcn-landing-page.git"
+          target="_blank"
+        >
+          Entrar
+        </Link>
+      </Button>
     </header>
   );
 };

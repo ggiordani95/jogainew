@@ -107,7 +107,7 @@ html {
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
+    --background: 20 14.3% 2%;
     --foreground: 60 9.1% 97.8%;
 
     --card: 24 9.8% 8%;
@@ -116,7 +116,7 @@ html {
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
 
-    --primary: 20.5 90.2% 48.2%;
+    --primary: 46.5 90.2% 60.2%;
     --primary-foreground: 60 9.1% 97.8%;
 
     --secondary: 12 6.5% 15.1%;
