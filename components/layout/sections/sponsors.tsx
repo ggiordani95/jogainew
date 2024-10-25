@@ -1,75 +1,73 @@
 "use client";
 
-import { Icon } from "@/components/ui/icon";
 import { Marquee } from "@devnomic/marquee";
 import "@devnomic/marquee/dist/index.css";
-import { icons } from "lucide-react";
+import Image from "next/image";
+import tennis from "../../../public/tennis.png";
+import soccer from "../../../public/soccer.png";
+import volley from "../../../public/volley.png";
 interface sponsorsProps {
-  icon: string;
+  icon: any;
   name: string;
 }
 
 const sponsors: sponsorsProps[] = [
   {
-    icon: "Crown",
-    name: "Acmebrand",
+    icon: <Image src={soccer} alt="soccer" width={120} height={122} />,
+    name: "Futebol Society",
   },
   {
-    icon: "Vegan",
-    name: "Acmelogo",
+    icon: <Image src={tennis} alt="tennis" width={120} height={122} />,
+    name: "Beach Tennis",
   },
   {
-    icon: "Ghost",
-    name: "Acmesponsor",
+    icon: <Image src={soccer} alt="soccer" width={120} height={122} />,
+    name: "Futebol 11",
   },
   {
-    icon: "Puzzle",
-    name: "Acmeipsum",
+    icon: <Image src={tennis} alt="tennis" width={120} height={122} />,
+    name: "Tênis",
   },
   {
-    icon: "Squirrel",
-    name: "Acme",
+    icon: <Image src={volley} alt="volley" width={120} height={122} />,
+    name: "Futevôlei",
   },
   {
-    icon: "Cookie",
-    name: "Accmee",
+    icon: <Image src={soccer} alt="soccer" width={120} height={122} />,
+    name: "Futebol de Areia",
   },
-  {
-    icon: "Drama",
-    name: "Acmetech",
-  },
+  
 ];
 
 export const SponsorsSection = () => {
   return (
-    <section id="sponsors" className="max-w-[75%] mx-auto pb-24 sm:pb-32">
-      <h2 className="text-lg md:text-xl text-center mb-6">
-        Our Platinum Sponsors
-      </h2>
-
-      <div className="mx-auto">
-        <Marquee
-          className="gap-[3rem]"
-          fade
-          innerClassName="gap-[3rem]"
-          pauseOnHover
-        >
-          {sponsors.map(({ icon, name }) => (
-            <div
-              key={name}
-              className="flex items-center text-xl md:text-2xl font-medium"
-            >
-              <Icon
-                name={icon as keyof typeof icons}
-                size={32}
-                color="white"
-                className="mr-2"
-              />
-              {name}
-            </div>
-          ))}
-        </Marquee>
-      </div>
-    </section>
+    <div className="relative ">
+      <section
+        id="sponsors"
+        className="max-w-[100%] mx-auto pb-32 pt-0"
+      >
+        {/* <h2 className=" duration-10000 text-white text-3xl font-semibold md:text-4xl text-center mb-14">
+          Confira os esportes disponíveis{" "}
+        </h2> */}
+        <div className="mx-auto pt-6">
+          <Marquee
+            className="gap-[2.4rem]"
+            numberOfCopies={4}
+            fade
+            innerClassName="gap-[2.4rem]"
+          >
+            {sponsors.map(({ icon, name }) => (
+              <div
+                key={name}
+                className="flex items-center bg-card/20 text-lg md:text-3xl  text-card-foreground/50 p-6 rounded-2xl gap-3"
+              >
+                <div className="max-w-[42px] mr-2 ">{icon}</div>
+                <span>{name}</span>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </section>
+    </div>
   );
 };

@@ -10,58 +10,58 @@ interface FeaturesProps {
 
 const featureList: FeaturesProps[] = [
   {
-    icon: "TabletSmartphone",
-    title: "Mobile Friendly",
+    icon: "CalendarCheck",
+    title: "Agendamento",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+      "Com nossa plataforma, seus clientes poderão agendar os horários direto pelo aplicativo Jogaí.",
   },
   {
-    icon: "BadgeCheck",
-    title: "Social Proof",
+    icon: "Calendar",
+    title: "Calendário",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      "Tenha uma visualização fácil de seus horários e agende jogos também com o nosso calendário.",
   },
   {
-    icon: "Goal",
-    title: "Targeted Content",
+    icon: "PartyPopper",
+    title: "Eventos",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      "Disponibilize seu espaço para eventos e churrascos para todos seus clientes pelo nosso app.",
   },
   {
-    icon: "PictureInPicture",
-    title: "Strong Visuals",
+    icon: "Group",
+    title: "Clientes",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Possua uma lista com todos seus clientes e tenha a oportunidade de mandar mensagens.",
   },
   {
     icon: "MousePointerClick",
-    title: "Clear CTA",
+    title: "Financeiro",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      "Acompanhe seu faturamento e números de agendamentos de sua Arena de forma automatizada.",
   },
+
   {
-    icon: "Newspaper",
-    title: "Clear Headline",
+    icon: "MousePointerClick",
+    title: "Mensalistas",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      "Faça a gestão dos seus mensalistas na nossa plataforma",
   },
+  
 ];
 
 export const FeaturesSection = () => {
   return (
-    <section id="features" className="container py-24 sm:py-32">
+    <section id="features" className="container py-16 sm:py-12">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Features
+        Soluções
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What Makes Us Different
+        As melhores Soluções para sua Arena
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-        fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-        facere tenetur.
+        O Jogaí foi criado para ser a melhor opção de mercado para os proprietários de Arenas Esportivas.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -69,10 +69,10 @@ export const FeaturesSection = () => {
           <div key={title}>
             <Card className="h-full bg-background border-0 shadow-none">
               <CardHeader className="flex justify-center items-center">
-                <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
+                <div className="bg-primary/40 animate-pulse p-4 rounded-full ring-8 ring-primary/10 mb-4">
                   <Icon
                     name={icon as keyof typeof icons}
-                    size={24}
+                    size={32}
                     color="hsl(var(--primary))"
                     className="text-primary"
                   />

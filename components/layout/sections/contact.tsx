@@ -63,53 +63,44 @@ export const ContactSection = () => {
         <div>
           <div className="mb-4">
             <h2 className="text-lg text-primary mb-2 tracking-wider">
-              Contact
+              Contato
             </h2>
 
-            <h2 className="text-3xl md:text-4xl font-bold">Connect With Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Entre em contato com a gente</h2>
           </div>
           <p className="mb-8 text-muted-foreground lg:w-5/6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            ipsam sint enim exercitationem ex autem corrupti quas tenetur
+            Envie mensagem pelo nosso site ou por nosso e-mail. Iremos responder em até 1 (um) dia útil.
           </p>
 
           <div className="flex flex-col gap-4">
-            <div>
-              <div className="flex gap-2 mb-1">
-                <Building2 />
-                <div className="font-bold">Find us</div>
-              </div>
 
-              <div>742 Evergreen Terrace, Springfield, IL 62704</div>
-            </div>
-
-            <div>
+            {/* <div>
               <div className="flex gap-2 mb-1">
                 <Phone />
                 <div className="font-bold">Call us</div>
               </div>
 
               <div>+1 (619) 123-4567</div>
-            </div>
+            </div> */}
 
             <div>
               <div className="flex gap-2 mb-1">
                 <Mail />
-                <div className="font-bold">Mail US</div>
+                <div className="font-bold">Nosso e-mail</div>
               </div>
 
-              <div>leomirandadev@gmail.com</div>
+              <div>jogaiapp@gmail.com</div>
             </div>
 
             <div>
               <div className="flex gap-2">
                 <Clock />
-                <div className="font-bold">Visit us</div>
+                <div className="font-bold">Horário de Atendimento Comercial</div>
               </div>
 
               <div>
-                <div>Monday - Friday</div>
-                <div>8AM - 4PM</div>
+                <div>Segunda - Sexta</div>
+                <div>9:00 - 17:00</div>
               </div>
             </div>
           </div>
@@ -129,9 +120,9 @@ export const ContactSection = () => {
                     name="firstName"
                     render={({ field }) => (
                       <FormItem className="w-full">
-                        <FormLabel>First Name</FormLabel>
+                        <FormLabel>Primeiro nome</FormLabel>
                         <FormControl>
-                          <Input placeholder="Leopoldo" {...field} />
+                          <Input placeholder="Nome" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -142,9 +133,9 @@ export const ContactSection = () => {
                     name="lastName"
                     render={({ field }) => (
                       <FormItem className="w-full">
-                        <FormLabel>Last Name</FormLabel>
+                        <FormLabel>Sobrenome</FormLabel>
                         <FormControl>
-                          <Input placeholder="Miranda" {...field} />
+                          <Input placeholder="Sobrenome" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -158,11 +149,11 @@ export const ContactSection = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>E-mail</FormLabel>
                         <FormControl>
                           <Input
                             type="email"
-                            placeholder="leomirandadev@gmail.com"
+                            placeholder="seuemail@email.com"
                             {...field}
                           />
                         </FormControl>
@@ -178,7 +169,7 @@ export const ContactSection = () => {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Subject</FormLabel>
+                        <FormLabel>Assunto</FormLabel>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
@@ -190,17 +181,17 @@ export const ContactSection = () => {
                           </FormControl>
                           <SelectContent>
                             <SelectItem value="Web Development">
-                              Web Development
+                              Planos
                             </SelectItem>
                             <SelectItem value="Mobile Development">
-                              Mobile Development
+                              Financeiro
                             </SelectItem>
                             <SelectItem value="Figma Design">
                               Figma Design
                             </SelectItem>
                             <SelectItem value="REST API">REST API</SelectItem>
                             <SelectItem value="FullStack Project">
-                              FullStack Project
+                              Outro
                             </SelectItem>
                           </SelectContent>
                         </Select>
@@ -216,11 +207,11 @@ export const ContactSection = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message</FormLabel>
+                        <FormLabel>Mensagem</FormLabel>
                         <FormControl>
                           <Textarea
                             rows={5}
-                            placeholder="Your message..."
+                            placeholder="Sua mensagem..."
                             className="resize-none"
                             {...field}
                           />
@@ -232,7 +223,7 @@ export const ContactSection = () => {
                   />
                 </div>
 
-                <Button className="mt-4">Send message</Button>
+                <Button className="mt-4 text-black">Enviar Mensagem</Button>
               </form>
             </Form>
           </CardContent>

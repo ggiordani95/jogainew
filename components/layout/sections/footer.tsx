@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export const FooterSection = () => {
   return (
-    <footer id="footer" className="container py-24 sm:py-32">
-      <div className="p-10 bg-card border border-secondary rounded-2xl">
+    <footer id="footer" className="">
+      <div className="p-10 bg-slate-800/5">
         <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
           <div className="col-span-full xl:col-span-2">
             <Link href="#" className="flex font-bold items-center">
@@ -16,85 +16,75 @@ export const FooterSection = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Contact</h3>
+            <h3 className="font-bold text-lg">Usuários</h3>
             <div>
               <Link href="#" className="opacity-60 hover:opacity-100">
-                Github
+                Proprietário de Arena
+              </Link>
+            </div>
+
+            <div>
+              <Link href="https://play.jogai.app/" className="opacity-60 hover:opacity-100">
+                Jogador
+              </Link>
+            </div>
+
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <h3 className="font-bold text-lg">Usabilidade</h3>
+            <div>
+              <Link href="#" className="opacity-60 hover:opacity-100">
+                Privacidade
               </Link>
             </div>
 
             <div>
               <Link href="#" className="opacity-60 hover:opacity-100">
-                Twitter
+                Acessibildade
               </Link>
             </div>
 
             <div>
               <Link href="#" className="opacity-60 hover:opacity-100">
-                Instagram
+                Termos
               </Link>
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Platforms</h3>
+            <h3 className="font-bold text-lg">Ajuda</h3>
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                iOS
+              <Link href="#contact" className="opacity-60 hover:opacity-100">
+                Entre em contato
               </Link>
             </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Android
+              <Link href="#faq" className="opacity-60 hover:opacity-100">
+                Pergunas Frequentes
               </Link>
             </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Web
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Help</h3>
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Contact Us
-              </Link>
-            </div>
-
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                FAQ
-              </Link>
-            </div>
-
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
+              <Link href="#contact" className="opacity-60 hover:opacity-100">
                 Feedback
               </Link>
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Socials</h3>
+            <h3 className="font-bold text-lg">Redes Sociais</h3>
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Twitch
+              <Link href="https://www.instagram.com/jogaiapp/" className="opacity-60 hover:opacity-100">
+                Instagram
               </Link>
             </div>
 
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Discord
-              </Link>
-            </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Dribbble
+              <Link href="https://x.com/jogaiapp" className="opacity-60 hover:opacity-100">
+                X
               </Link>
             </div>
           </div>
@@ -103,13 +93,15 @@ export const FooterSection = () => {
         <Separator className="my-6" />
         <section className="">
           <h3 className="">
-            &copy; 2024 Designed and developed by
+            &copy;Copyright 2024
             <Link
               target="_blank"
               href="https://github.com/leoMirandaa"
               className="text-primary transition-all border-primary hover:border-b-2 ml-1"
             >
-              Leo Miranda
+              Jogaí Soluções em Tecnologia LTDA - CNPJ 55.437.837/0001-94
+
+              Todos os direitos reservados
             </Link>
           </h3>
         </section>
