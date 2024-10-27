@@ -46,12 +46,12 @@ const featureList: FeaturesProps[] = [
     description:
       "Faça a gestão dos seus mensalistas na nossa plataforma",
   },
-  
+
 ];
 
 export const FeaturesSection = () => {
   return (
-    <section id="features" className="container py-16 sm:py-12">
+    <section id="features" className="container py-16 sm:py-20">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
         Soluções
       </h2>

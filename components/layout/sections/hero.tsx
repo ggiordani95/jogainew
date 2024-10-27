@@ -19,8 +19,8 @@ export const HeroSection = () => {
   return (
     <section className="container w-full">
       <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
-        <div className="w-full flex">
-          <div className=" space-y-8 text-center">
+        <div className="w-full flex max-lg:flex-col ">
+          <div className=" space-y-8 max-lg:text-center">
             <div className="max-w-screen-md mx-auto text-4xl md:text-6xl font-bold text-white">
               <h1>
                 A plataforma que
@@ -53,7 +53,10 @@ export const HeroSection = () => {
             />
             <div className="space-y-4 md:space-y-0 md:space-x-4">
               <Button className="w-5/6 md:w-1/4 font-bold text-black">
-                Começar teste grátis
+                <a href="https://dashboard.jogai.app/arena/login" target="_blank" rel="noopener noreferrer">
+                  Começar teste grátis
+                </a>
+
               </Button>
 
               <Button
@@ -62,7 +65,7 @@ export const HeroSection = () => {
                 className="w-5/6 md:w-2/6 font-bold"
               >
                 <Link
-                  href="https://github.com/nobruf/shadcn-landing-page.git"
+                  href="https://play.jogai.app/"
                   target="_blank"
                 >
                   Aplicativo para jogadores
@@ -70,36 +73,40 @@ export const HeroSection = () => {
               </Button>
             </div>
           </div>
-          <Card className="relative bottom-6 w-72  drop-shadow-xl shadow-black/10 dark:shadow-white/10 bg-black">
-            <CardHeader>
-              <CardTitle className="flex item-center justify-between">
+          <Card className="relative  bottom-6 max-lg:mt-20 max-lg:left-1/2 max-lg:translate-x-[-50%] w-72  drop-shadow-xl shadow-black/10 dark:shadow-white/10 bg-black">
+            <CardHeader className="max-lg:text-center">
+              <CardTitle className="flex items-center justify-between max-lg:justify-center">
                 Primeiro mês
-                <Badge variant="secondary" className="text-sm text-primary">
-                  Para testar
-                </Badge>
+                {/* <Badge variant="secondary" className="text-sm text-primary">
+      BEMVINDO
+    </Badge> */}
               </CardTitle>
-              <div>
-                <span className="text-3xl font-bold py-">R$0</span>
-                <span className="text-muted-foreground"> / Sem custo</span>
+              <div className="max-lg:flex max-lg:flex-col max-lg:items-center">
+                <span className="text-2xl font-bold">R$0</span>
+                <span className="text-muted-foreground max-lg:hidden"> / Sem custo</span>
               </div>
 
-              <CardDescription>
+              <CardDescription className="max-lg:text-center">
                 Você pode testar nossos serviços o quanto quiser sem custo algum
-                no primeiro mês.
+                no primeiro mês. <br /><br />
+                <span className="text-sm w-full font-bold text-primary">Utilize o cupom: BEMVINDO</span>
               </CardDescription>
             </CardHeader>
 
+
             <CardContent>
               <Button className="w-full text-black font-bold">
-                Testar grátis
+                <a href="https://dashboard.jogai.app/arena/login" target="_blank" rel="noopener noreferrer">
+                  Testar gratuitamente
+                </a>
               </Button>
             </CardContent>
 
-            <hr className="w-4/5 m-auto mb-4" />
+            <hr className="w-4/5 m-auto mb-4 max-lg:hidden" />
 
-            <CardFooter className="flex">
-              <div className="space-y-4">
-                {["4 Team member", "4 GB Storage", "Upto 6 pages"].map(
+            <CardFooter className="flex ">
+              <div className="space-y-4 max-lg:hidden">
+                {["2 quadras", "30 dias grátis", "Comece instantaneamente"].map(
                   (benefit: string) => (
                     <span key={benefit} className="flex">
                       <Check className="text-green-500" />{" "}
@@ -113,7 +120,7 @@ export const HeroSection = () => {
         </div>
         <div className="relative group mt-14">
           <div className="absolute top-2 lg:-top-14 left-1/2 transform -translate-x-1/2 w-[90%] mx-auto h-24 lg:h-80 bg-primary/50 rounded-xl blur-3xl"></div>
-          
+
           <Image
             width={1903}
             height={898}

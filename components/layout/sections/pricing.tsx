@@ -20,60 +20,47 @@ interface PlanProps {
   price: number;
   description: string;
   buttonText: string;
-  benefitList: string[];
+  save: string;
+
+
 }
 
 const plans: PlanProps[] = [
   {
     title: "Mensal",
     popular: 0,
-    price: 169,
+    price: 139,
     description:
       "Está em dúvida? Contrate o plano mensal para testar a plataforma.",
     buttonText: "Escolher plano",
-    benefitList: [
-      "1 quadra",
-      "1 GB storage",
-      "Upto 2 pages",
-      "Community support",
-      "AI assistance",
-    ],
+    save: '',
+
   },
   {
     title: "Anual",
     popular: 1,
-    price: 119,
+    price: 99,
     description:
       "O plano com o melhor custo-benefício.",
     buttonText: "Quero o melhor plano",
-    benefitList: [
-      "3 quadras",
-      "8 GB storage",
-      "Upto 6 pages",
-      "Priority support",
-      "AI assistance",
-    ],
+    save: "Economize R$489 por ano"
+
   },
   {
     title: "Semestral",
     popular: 0,
-    price: 149,
+    price: 119,
     description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
+      "Plano econômico, sem compromisso a longo prazo.",
     buttonText: "Escolher plano",
-    benefitList: [
-      "2 quadras",
-      "20 GB storage",
-      "Upto 10 pages",
-      "Phone & email support",
-      "AI assistance",
-    ],
+    save: "Economize R$240"
+
   },
 ];
 
 export const PricingSection = () => {
   return (
-    <section className="container py-24 sm:py-32">
+    <section id="pricing" className="container py-24 sm:py-32">
       <h2 className="text-3xl font-bold text-primary text-center mb-2 tracking-wider">
         Planos
       </h2>
@@ -88,7 +75,7 @@ export const PricingSection = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
         {plans.map(
-          ({ title, popular, price, description, buttonText, benefitList }, index) => (
+          ({ title, popular, price, description, buttonText, save }, index) => (
             <Card
               key={title}
               className={
@@ -112,22 +99,21 @@ export const PricingSection = () => {
 
               <CardContent className="flex">
                 <div className="space-y-4">
-                  {benefitList.map((benefit) => (
-                    <span key={benefit} className="flex">
+                  {save && (
+                    <span key={save} className="flex">
                       <Check className="text-primary mr-2" />
-                      <h3>{benefit}</h3>
+                      <h3 className="text-gray-300">{save}</h3>
                     </span>
-                  ))}
+                  )}
                 </div>
               </CardContent>
-
               <CardFooter>
                 <Button
                   variant={
                     popular === PopularPlan?.YES ? "default" : "secondary"
                   }
                   className="w-full"
-                  style={{color: index === 1 ? "black" : "white"}}
+                  style={{ color: index === 1 ? "black" : "white" }}
                 >
                   {buttonText}
                 </Button>

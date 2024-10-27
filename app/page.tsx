@@ -42,14 +42,14 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      
+
       <HeroSection />
       <SponsorsSection />
-      <BenefitsSection /> 
+      <BenefitsSection />
       <FeaturesSection />
-     
+
       {/* <ServicesSection /> */}
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
       {/* <TeamSection />
       <CommunitySection /> */}
       <PricingSection />
