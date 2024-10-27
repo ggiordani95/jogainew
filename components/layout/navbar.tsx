@@ -32,13 +32,11 @@ interface RouteProps {
 interface FeatureProps {
   title: string;
   description: string;
+  link: string;
 }
 
 const routeList: RouteProps[] = [
-  {
-    href: "#who-we-are",
-    label: "Quem somos",
-  },
+
   {
     href: "#testimonials",
     label: "Depoimentos",
@@ -51,19 +49,17 @@ const routeList: RouteProps[] = [
 
 const featureList: FeatureProps[] = [
   {
-    title: "Showcase Your Value ",
-    description: "Highlight how your product solves user problems.",
+    title: "Entrar como Arena",
+    description:
+      "Plataforma para gestão",
+    link: "https://dashboard.jogai.app/arena/login"
   },
   {
-    title: "Build Trust",
-    description:
-      "Leverages social proof elements to establish trust and credibility.",
+    title: "Entrar como Jogador ",
+    description: "Plataforma para agendamento",
+    link: "https://play.jogai.app"
   },
-  {
-    title: "Capture Leads",
-    description:
-      "Make your lead capture form visually appealing and strategically.",
-  },
+
 ];
 
 export const Navbar = () => {
@@ -129,37 +125,7 @@ export const Navbar = () => {
           {/* <!-- Desktop --> */}
           <NavigationMenu className="hidden lg:block mx-auto">
             <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-card text-base">
-                  Cadastre sua arena
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
-                    <Image
-                      src="https://avatars.githubusercontent.com/u/75042455?v=4"
-                      alt="RadixLogo"
-                      className="h-full w-full rounded-md object-cover"
-                      width={600}
-                      height={600}
-                    />
-                    <ul className="flex flex-col gap-2">
-                      {featureList.map(({ title, description }) => (
-                        <li
-                          key={title}
-                          className="rounded-md p-3 text-sm hover:bg-muted"
-                        >
-                          <p className="mb-1 font-semibold leading-none text-foreground">
-                            {title}
-                          </p>
-                          <p className="line-clamp-2 text-muted-foreground">
-                            {description}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+
 
               <NavigationMenuItem>
                 {routeList.map(({ href, label }) => (
@@ -170,17 +136,39 @@ export const Navbar = () => {
                   </NavigationMenuLink>
                 ))}
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-primary text-black">
+                  Entrar
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid w-[250px] grid-cols-1 gap-5 p-4">
+
+                    <ul className="flex flex-col gap-2">
+                      {featureList.map(({ title, description, link }) => (
+                        <a key={title} href={link} target="_blank">
+                          <li
+
+                            className="rounded-md p-3 text-sm hover:bg-primary group"
+                          >
+                            <p className="mb-1 font-semibold leading-none text-foreground  group-hover:text-black">
+                              {title}
+                            </p>
+                            <p className="line-clamp-2 text-muted-foreground  group-hover:text-black/70">
+                              {description}
+                            </p>
+                          </li>
+
+                        </a>
+
+                      ))}
+                    </ul>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Button asChild variant="default" className=" font-bold text-black">
-            <Link
-              href="https://github.com/nobruf/shadcn-landing-page.git"
-              target="_blank"
-            >
-              Entrar
-            </Link>
-          </Button>
+
         </div>
       </div>
     </header>
