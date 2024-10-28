@@ -18,7 +18,7 @@ import { SponsorsSection } from "./sponsors";
 export const HeroSection = () => {
   return (
     <section className="container w-full">
-      <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
+      <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto pt-20 pb-0 md:py-32">
         <div className="w-full flex max-lg:flex-col ">
           <div className=" space-y-8 max-lg:text-center">
             <div className="max-w-screen-md mx-auto text-4xl md:text-6xl font-bold text-white">
@@ -118,16 +118,18 @@ export const HeroSection = () => {
             </CardFooter>
           </Card>
         </div>
-        <div className="relative group mt-14">
+        <div className="relative group mt-14 lg:block hidden">
           <div className="absolute top-2 lg:-top-14 left-1/2 transform -translate-x-1/2 w-[90%] mx-auto h-24 lg:h-80 bg-primary/50 rounded-xl blur-3xl"></div>
 
           <Image
             width={1903}
             height={898}
-            className="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border border-t-0 border-secondary  border-t-primary/30"
+            className="hidden lg:block w-full md:w-[1200px] mx-auto rounded-lg relative leading-none items-center border border-t-0 border-secondary border-t-primary/30"
             src={"/dash2.png"}
             alt="dashboard"
           />
+
+
 
           <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>
         </div>

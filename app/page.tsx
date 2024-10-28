@@ -10,6 +10,9 @@ import { ServicesSection } from "@/components/layout/sections/services";
 import { SponsorsSection } from "@/components/layout/sections/sponsors";
 import { TeamSection } from "@/components/layout/sections/team";
 import { TestimonialSection } from "@/components/layout/sections/testimonial";
+import { useEffect, useState } from "react";
+
+
 
 export const metadata = {
   title: "Shadcn - Landing template",
@@ -39,10 +42,14 @@ export const metadata = {
   },
 };
 
+
 export default function Home() {
+
+
+
+
   return (
     <>
-
       <HeroSection />
       <SponsorsSection />
       <BenefitsSection />
@@ -51,10 +58,10 @@ export default function Home() {
       {/* <ServicesSection /> */}
       {/* <TestimonialSection /> */}
       {/* <TeamSection />
-      <CommunitySection /> */}
+        <CommunitySection /> */}
       <PricingSection />
       <ContactSection />
-      <FAQSection />
+      {/* <FAQSection /> */}
       <FooterSection />
     </>
   );

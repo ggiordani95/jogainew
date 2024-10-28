@@ -1,6 +1,7 @@
 "use client";
+
 import { ChevronsDown, Github, Menu } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -23,6 +24,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ToggleTheme } from "./toogle-theme";
 import jogai from "../../public/jogai.png";
+import { useNavbarStore } from "@/store/navbar-store";
 
 interface RouteProps {
   href: string;
@@ -38,12 +40,12 @@ interface FeatureProps {
 const routeList: RouteProps[] = [
 
   {
-    href: "#testimonials",
-    label: "Depoimentos",
+    href: "#features",
+    label: "Soluções para sua Arena",
   },
   {
-    href: "#faq",
-    label: "Perguntas Frequentes",
+    href: "#contact",
+    label: "Contato",
   },
 ];
 
@@ -62,10 +64,14 @@ const featureList: FeatureProps[] = [
 
 ];
 
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const navIsFixed = useNavbarStore((state: any) => state.isNavbarFixed)
+
   return (
-    <header className=" backdrop-blur-lg shadow-lg  bg-card/30   border-2 border-t-0 border-l-0 border-r-0 border-b-white/10  mx-auto sticky z-40  p-2">
+    <header className={`${navIsFixed ? "fixed top-0" : "block"} backdrop-blur-lg shadow-lg  bg-card/30   border-2 border-t-0 border-l-0 border-r-0 border-b-white/10  mx-auto sticky z-40  p-2`}>
       <div className="flex justify-between items-center container">
         <Link
           href="/"
@@ -92,8 +98,9 @@ export const Navbar = () => {
                   <SheetHeader className="mb-4 ml-4">
                     <SheetTitle className="flex items-center">
                       <Link href="/" className="flex items-center">
-                        <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-                        Shadcn
+                        <Image src={jogai} width={100} height={60} alt="Logo Jogai">
+
+                        </Image>
                       </Link>
                     </SheetTitle>
                   </SheetHeader>
@@ -113,11 +120,7 @@ export const Navbar = () => {
                   </div>
                 </div>
 
-                <SheetFooter className="flex-col sm:flex-col justify-start items-start">
-                  <Separator className="mb-2" />
 
-                  <ToggleTheme />
-                </SheetFooter>
               </SheetContent>
             </Sheet>
           </div>
@@ -130,7 +133,7 @@ export const Navbar = () => {
               <NavigationMenuItem>
                 {routeList.map(({ href, label }) => (
                   <NavigationMenuLink key={href} asChild>
-                    <Link href={href} className="text-base px-2">
+                    <Link href={href} className="text-base px-2 mr-3">
                       {label}
                     </Link>
                   </NavigationMenuLink>

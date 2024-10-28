@@ -43,7 +43,7 @@ export const SponsorsSection = () => {
 	return (
 		<section
 			id="sponsors"
-			className="max-w-[100%] mx-auto pb-32 pt-0 relative  bg-transparent"
+			className="max-w-[100%] mx-auto max-lg:pb-14 pb-32 pt-0 relative  bg-transparent"
 		>
 			{/* <h2 className=" duration-10000 text-white text-3xl font-semibold md:text-4xl text-center mb-14">
           Confira os esportes disponíveis{" "}

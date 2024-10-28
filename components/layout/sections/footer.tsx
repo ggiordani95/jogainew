@@ -1,17 +1,21 @@
 import { Separator } from "@/components/ui/separator";
 import { ChevronsDownIcon } from "lucide-react";
 import Link from "next/link";
+import jogai from "../../../public/jogai.png";
+import Image from "next/image";
 
 export const FooterSection = () => {
   return (
-    <footer id="footer" className="">
-      <div className="p-10 bg-slate-800/5">
+    <footer id="footer" className="py-10 w-full bg-slate-800/5">
+      <div className=" container">
         <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
           <div className="col-span-full xl:col-span-2">
             <Link href="#" className="flex font-bold items-center">
-              <ChevronsDownIcon className="w-9 h-9 mr-2 bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg border border-secondary" />
+              <Image width={100} height={50} src={jogai} alt="Logo Jogaí">
 
-              <h3 className="text-2xl">Shadcn</h3>
+              </Image>
+
+
             </Link>
           </div>
 
